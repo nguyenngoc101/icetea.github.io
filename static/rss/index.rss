@@ -1,66 +1,677 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Learn Java</title><description>Thoughts, stories and ideas.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Sun, 30 Oct 2016 13:37:22 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Welcome to Ghost</title><description>&lt;p&gt;You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at &lt;code&gt;&amp;lt;your blog URL&amp;gt;/ghost/&lt;/code&gt;. When you arrive, you can select this post from a list&lt;/p&gt;</description><link>http://localhost:2368/welcome-to-ghost/</link><guid isPermaLink="false">55f18bfc-4c75-4554-973e-f06c29a696ea</guid><category>Getting Started</category><dc:creator>ngocnv</dc:creator><pubDate>Sun, 30 Oct 2016 13:15:14 GMT</pubDate><content:encoded>&lt;p&gt;You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at &lt;code&gt;&amp;lt;your blog URL&amp;gt;/ghost/&lt;/code&gt;. When you arrive, you can select this post from a list on the left and see a preview of it on the right. Click the little pencil icon at the top of the preview to edit this post and read the next section!&lt;/p&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Learn Java</title><description>Thoughts, stories and ideas.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Sun, 30 Oct 2016 15:01:43 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Autotest GUI với Scala</title><description>&lt;p&gt;Scala không phải là một ngôn ngữ mới nhưng vẫn còn khá lạ lẫm với các developer , đặc biệt là việc áp dụng Scala trong viết test. Ngày càng có nhiều dự án sử dụng Scala cho mục đích test GUI, vì vậy bài viết sẽ giới thiệu một sự&lt;/p&gt;</description><link>http://localhost:2368/autotest-scala/</link><guid isPermaLink="false">4f4c6791-7784-4b8c-9381-31118f6df2ba</guid><category>test</category><category>scala</category><dc:creator>ngocnv</dc:creator><pubDate>Sun, 30 Oct 2016 15:00:38 GMT</pubDate><content:encoded>&lt;p&gt;Scala không phải là một ngôn ngữ mới nhưng vẫn còn khá lạ lẫm với các developer , đặc biệt là việc áp dụng Scala trong viết test. Ngày càng có nhiều dự án sử dụng Scala cho mục đích test GUI, vì vậy bài viết sẽ giới thiệu một sự kết hợp hoàn hảo giữa &lt;strong&gt;Scala, Junit, Specs2 và Selenium&lt;/strong&gt; để đạt được điều đó.&lt;/p&gt;
 
-&lt;h2 id="gettingstarted"&gt;Getting Started&lt;/h2&gt;
+&lt;p&gt;Trong quá trình tham gia project tôi luôn tự hỏi vì sao họ lại kết hợp những thứ này với nhau. Với Junit và Selenium thì câu trả lời là tương đối dễ dàng bởi: &lt;/p&gt;
 
-&lt;p&gt;Ghost uses something called Markdown for writing. Essentially, it's a shorthand way to manage your post formatting as you write!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Junit&lt;/strong&gt;: là một framework unit test cho Java, hỗ trợ cấu hình và chạy các unit test, nó phổ biến đến nỗi khi nhắc đến viết unit test cho Java thì người ta sẽ nhắc ngay đến nó. Scala lại là ngôn ngữ  được biên dịch qua mã Java byte code rồi chạy trên JVM (Java virtual machine) nên 2 ngôn ngữ này có thể kết hợp với nhau hoặc có thể sử dụng các framework, thư viện của nhau. Do vậy việc tận dụng một framework phổ biến, đã được cộng đồng kiếm chứng làm giảm chi phí phát triển dự án&lt;/p&gt;
 
-&lt;p&gt;Writing in Markdown is really easy. In the left hand panel of Ghost, you simply write as you normally would. Where appropriate, you can use &lt;em&gt;shortcuts&lt;/em&gt; to &lt;strong&gt;style&lt;/strong&gt; your content. For example, a list:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Selenium&lt;/strong&gt;: để có thể thực hiện autotest GUI thì cần phải có một tool cho phép
+giả lập các thao tác của người dùng với browser như click chuột, nhập text, gõ các phím ... Selenium chính là một tool như vậy, bạn có thể làm những điều này dễ dàng với Selenium trên các trình duyệt khác nhau như firefox, chrome, ie... Cũng giống như Junit nó là một tool phổ biến và hỗ trợ đầy đủ nhất cho mục đích này.&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;Item number one&lt;/li&gt;
-&lt;li&gt;Item number two
-&lt;ul&gt;&lt;li&gt;A nested item&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;A final item&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Vậy tại sao lại sử dụng Scala mà không phải là Java?&lt;/strong&gt; Khi viết test GUI ngoài việc đảm bảo viết và chạy các test đúng thì điều quan trọng nhất là các test case phải ngắn gọn dễ đọc, dễ bảo trì. Điều này thì Scala hơn hẳn Java, Scala cung cấp các built-in method, sử dụng closure và lamda giống như trong Ruby hay Python, làm cho code viết bằng Scala ngắn gọn, xúc tích và dễ đọc ngay cả với những tester ít có kinh nghiệm lập trình, do nó gần với ngôn ngữ tự nhiên hơn so với Java. Dưới đây là một số ví dụ:&lt;/p&gt;
 
-&lt;p&gt;or with numbers!&lt;/p&gt;
+&lt;p&gt;Nếu muốn khai báo một list các số nguyên, sau đó lọc những phần tử chẵn rồi sắp xếp:  &lt;/p&gt;
 
-&lt;ol&gt;
-&lt;li&gt;Remember to buy some milk  &lt;/li&gt;
-&lt;li&gt;Drink the milk  &lt;/li&gt;
-&lt;li&gt;Tweet that I remembered to buy the milk, and drank it&lt;/li&gt;
-&lt;/ol&gt;
+&lt;pre&gt;&lt;code class="language-Scala"&gt;val nums = List(5, 1, 4, 3, 2)  
+nums.filter(_ % 2 == 0).sort(_ &amp;lt; _)  
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id="links"&gt;Links&lt;/h3&gt;
+&lt;p&gt;Hoặc một thao tác hay gặp khi viết các test là kiểm tra xem liệu một list có được sắp xếp theo chiều giảm dần hay không?&lt;/p&gt;
 
-&lt;p&gt;Want to link to a source? No problem. If you paste in a URL, like &lt;a href="http://ghost.org"&gt;http://ghost.org&lt;/a&gt; - it'll automatically be linked up. But if you want to customise your anchor text, you can do that too! Here's a link to &lt;a href="http://ghost.org"&gt;the Ghost website&lt;/a&gt;. Neat.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-Scala"&gt;return list.view.zip(list.tail).forall(x =&amp;gt; x._1 &amp;lt;= x._2)  
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id="whataboutimages"&gt;What about Images?&lt;/h3&gt;
+&lt;p&gt;Hay muốn convert một list các String sang list các số Double:  &lt;/p&gt;
 
-&lt;p&gt;Images work too! Already know the URL of the image you want to include in your article? Simply paste it in like this to make it show up:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="https://ghost.org/images/ghost.png" alt="The Ghost Logo"&gt;&lt;/p&gt;
-
-&lt;p&gt;Not sure which image you want to use yet? That's ok too. Leave yourself a descriptive placeholder and keep writing. Come back later and drag and drop the image in to upload:&lt;/p&gt;
-
-&lt;h3 id="quoting"&gt;Quoting&lt;/h3&gt;
-
-&lt;p&gt;Sometimes a link isn't enough, you want to quote someone on what they've said. Perhaps you've started using a new blogging platform and feel the sudden urge to share their slogan? A quote might be just the way to do it!&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Ghost - Just a blogging platform&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id="workingwithcode"&gt;Working with Code&lt;/h3&gt;
-
-&lt;p&gt;Got a streak of geek? We've got you covered there, too. You can write inline &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; blocks really easily with back ticks. Want to show off something more comprehensive? 4 spaces of indentation gets you there.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;.awesome-thing {
-    display: block;
-    width: 100%;
+&lt;pre&gt;&lt;code class="language-Scala"&gt;def convertStringListToDoubleList(list: Seq[String]) = {  
+    list.map({e =&amp;gt; e.toDouble})
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id="readyforabreak"&gt;Ready for a Break?&lt;/h3&gt;
+&lt;p&gt;Như vậy chỉ cần sử dụng Junit, Selenium và Scala là đã đủ đồ nghề cho chúng ta viết test. Tuy nhiên nếu chỉ có vậy thì các test case viết sẽ chỉ có code scala, nó có thể ngắn gọn và dễ đọc hơn với những người ít nhiều có kinh nghiệm với lập trình, tuy nhiên vấn đề đặt ra bây giờ là làm thế nào để test có thể dễ đọc, dễ hiểu với ngay cả những người không biết code. Tức là các test khi code xong phải gần giống như các test khi được đặc tả, nó phải gần giống như một file text. &lt;a href="https://etorreborre.github.io/specs2/"&gt;&lt;strong&gt;Specs2&lt;/strong&gt;&lt;/a&gt; là một thư viện cho phép đặc tả các unit test và acceptance test. Nó cũng cung cấp các &lt;a href="https://etorreborre.github.io/specs2/guide/SPECS2-3.6.2/org.specs2.guide.Matchers.html"&gt;matcher&lt;/a&gt; giúp việc assert các kết quả mong đợi và kết quả thực tế khi chạy thuận tiện và dễ đọc hơn. Hãy xem xét một test case được viết bằng Specs2 dưới đây:&lt;/p&gt;
 
-&lt;p&gt;Throw 3 or more dashes down on any new line and you've got yourself a fancy new divider. Aw yeah.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-Scala"&gt;class HelloWorldSpec extends Specification { def is = s2"""
 
-&lt;hr&gt;
+  This is a specification for the 'Hello world' string
 
-&lt;h3 id="advancedusage"&gt;Advanced Usage&lt;/h3&gt;
+  The 'Hello world' string should
+    contain 11 characters                             $e1
+    start with 'Hello'                                $e2
+    end with 'world'                                  $e3
+                                                      """
+  def e1 = "Hello world" must haveSize(11)
+  def e2 = "Hello world" must startWith("Hello")
+  def e3 = "Hello world" must endWith("world")
 
-&lt;p&gt;There's one fantastic secret about Markdown. If you want, you can write plain old HTML and it'll still work! Very flexible.&lt;/p&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;input type="text" placeholder="I'm an input field!"&gt;&lt;/p&gt;
+&lt;p&gt;Khi chạy file này, method &lt;em&gt;def is=s2&lt;/em&gt; sẽ được thực thi, trong method mỗi một dòng code sẽ có 1 dòng comment, các comment trong file trên sẽ là:  &lt;em&gt;contain 11 characters&lt;/em&gt;, &lt;em&gt;start with 'Hello'&lt;/em&gt; và &lt;em&gt;end with 'world'&lt;/em&gt; chúng lần lượt là comment của các method được chạy lần lượt e1, e2 và e3. Lưu ý ký tự đặc biệt &lt;em&gt;$&lt;/em&gt; trước các method nhằm giúp phân biệt giữa đâu là comment và đâu là nơi chạy các method. Với một test case được viết như trên những người làm về nghiệp vụ có thể đọc và hiểu được test case này đang làm gì, mà không cần quan tâm nhiều đến code viết bằng Scala. &lt;/p&gt;
 
-&lt;p&gt;That should be enough to get you started. Have fun - and let us know what you think :)&lt;/p&gt;</content:encoded></item></channel></rss>
+&lt;p&gt;Trong thực tế các test case phức tạp hơn nhiều, bằng việc ném xử lý phần logic vào các method trong Scala, với cách đặt tên các method này hợp lý, có nghĩa(meaningful). Sau đó các method này sẽ được gọi kết hợp Specs2 sẽ khiến cho test case cực kỳ dễ đọc, dễ hiểu với bất cứ ai. Đó là một trong những điều quan trọng nhất khi viết test. Bởi với những project đòi hỏi thời gian maintain (lên tới 80% chi phí dự án) thì cũng kéo theo việc phải chỉnh sửa các test case liên tục. Specs2 giúp các tester và developer giảm đáng kể thời gian cho việc này&lt;/p&gt;
+
+&lt;p&gt;Như vậy với việc sử dụng &lt;strong&gt;Scala, Junit, Specs2 và Selenium&lt;/strong&gt; bạn sẽ có thêm một sự lựa chọn tốt cho các dự án cần viết autotest cho GUI. &lt;/p&gt;</content:encoded></item><item><title>Java concurrency</title><description>&lt;p&gt;Java platform cung cấp khả năng xử lý multi-threading ở mức low-level, cho phép các developer viết các chương trình chạy song song xử dụng các keywords: synchronized, volatile, wait(), notify() và notifyAll(). Tuy nhiên việc xử lý concurrency ở mức low-level này khó sử dụng khi, hoặc sử dụng&lt;/p&gt;</description><link>http://localhost:2368/java-concurrency/</link><guid isPermaLink="false">14ae60ca-6233-4812-a388-35a42c5d0a50</guid><category>java</category><dc:creator>ngocnv</dc:creator><pubDate>Sun, 30 Oct 2016 14:56:26 GMT</pubDate><content:encoded>&lt;p&gt;Java platform cung cấp khả năng xử lý multi-threading ở mức low-level, cho phép các developer viết các chương trình chạy song song xử dụng các keywords: synchronized, volatile, wait(), notify() và notifyAll(). Tuy nhiên việc xử lý concurrency ở mức low-level này khó sử dụng khi, hoặc sử dụng không đúng cách khi gặp phải những vấn đề  khó nhần trong xử lý multi-threading như: deadlock, thread stavation, race condition. Chính vì vậy mà bắt đầu từ Java5 trở đi, framework Concurrency(java.util.concurrent) được thiết kế để giải quyết những vấn đề trền, ở mức high-level hơn giúp các developer dễ dàng quản lý resource, thread và đồng bộ các tiến trình hơn.&lt;/p&gt;
+
+&lt;p&gt;Bài viết này sẽ đề cập đến một vài utility của framework để hy vọng có thể  giúp chúng ta dễ tiếp cận và xử lý các ứng dụng chạy concurrency.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;The Executor framework&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Trong xử lý multi-thread, task là một đơn vị công việc. Một vấn đề khi sử dụng thư viện primative là sự phụ thuộc quá chặt chẽ giữa task và thread thực thi task đó. Lấy ví dụ:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;import java.io.IOException;
+
+import java.net.ServerSocket;  
+import java.net.Socket;
+
+class Server  
+{
+   public static void main(String[] args) throws IOException
+   {
+      ServerSocket socket = new ServerSocket(9000);
+      while (true)
+      {
+         final Socket s = socket.accept();
+         Runnable r = new Runnable()
+                      {
+                         @@Override
+                         public void run()
+                         {
+                            doWork(s);
+                         }
+                      };
+         new Thread(r).start();
+      }
+   }
+
+   static void doWork(Socket s)
+   {
+   }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ở đoạn code trên mỗi khi nhận một kết nối từ client đến server sẽ tạo một thread mới để xử lý tác vụ. Rõ ràng các xử lý này sẽ có vẫn đề khi có nhiều kết nối đến server, số lượng thread phải tạo mới sẽ tăng lên dẫn đến tràn nhớ hoặc số lượng thread được tạo ra vượt quá số lượng MAX_THREAD mà hệ điều hành cho phép. Do đó chương trình có thể bị chết ngay lập tức.&lt;/p&gt;
+
+&lt;p&gt;Để  giải quyết vấn đề này thay vì mỗi task tạo một thread, chúng ta sẽ sử dụng một thread pool chứa một số lượng các thread nhất định, các thread này sẽ có thực thi các task nếu chúng ở trạng thái active. Đoạn code bên trên có thể được viết lại như sau:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;import java.io.IOException;
+
+import java.net.ServerSocket;  
+import java.net.Socket;
+
+import java.util.concurrent.Executor;  
+import java.util.concurrent.Executors;
+
+class Server  
+{
+   static Executor pool = Executors.newFixedThreadPool(5);
+
+   public static void main(String[] args) throws IOException
+   {
+      ServerSocket socket = new ServerSocket(9000);
+      while (true)
+      {
+         final Socket s = socket.accept();
+         Runnable r = new Runnable()
+                      {
+                         @@Override
+                         public void run()
+                         {
+                            doWork(s);
+                         }
+                      };
+         pool.execute(r);
+      }
+   }
+
+   static void doWork(Socket s)
+   {
+   }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Một ví dụ khác về việc sử dụng Executor để đọc nội dụng một webpage&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;public class ReadWebPage  
+{
+   public static void main(final String[] args)
+   {
+      if (args.length != 1)
+      {
+         System.err.println("usage: java ReadWebPage url");
+         return;
+      }
+      ExecutorService executor = Executors.newSingleThreadExecutor();
+      Callable&amp;lt;List&amp;lt;String&amp;gt;&amp;gt; callable;
+      callable = new Callable&amp;lt;List&amp;lt;String&amp;gt;&amp;gt;()
+                 {
+                    @@Override
+                    public List&amp;lt;String&amp;gt; call()
+                       throws IOException, MalformedURLException
+                    {
+                       List&amp;lt;String&amp;gt; lines = new ArrayList&amp;lt;&amp;gt;();
+                       URL url = new URL(args[0]);
+                       HttpURLConnection con;
+                       con = (HttpURLConnection) url.openConnection();
+                       InputStreamReader isr;
+                       isr = new InputStreamReader(con.getInputStream());
+                       BufferedReader br;
+                       br = new BufferedReader(isr);
+                       String line;
+                       while ((line = br.readLine()) != null)
+                          lines.add(line);
+                       return lines;
+                    }
+                 };
+      Future&amp;lt;List&amp;lt;String&amp;gt;&amp;gt; future = executor.submit(callable);
+      try
+      {
+         List&amp;lt;String&amp;gt; lines = future.get(5, TimeUnit.SECONDS);
+         for (String line: lines)
+            System.out.println(line);
+      }
+      catch (ExecutionException ee)
+      {
+         System.err.println("Callable through exception: "+ee.getMessage());
+      }
+      catch (InterruptedException | TimeoutException eite)
+      {
+         System.err.println("URL not responding");
+      }
+      executor.shutdown();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ở đoạn code trên một single thread được taọ ra để  thực hiện đọc webpage được define trong phương thức call() của interface Callable. Sau khi submit task, thử lấy kết quả sau 5s. Nếu webpage được đọc xong thì kết quả đươc trả về còn nếu sau 5s thì TimeoutException sẽ được ném ra.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Semaphore&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Là một biến dùng để hạn chế truy nhập tới tài nguyên dùng chung trong môi trường multi-threading. Giá trị của nó được tăng lên khi tài nguyên bị chiếm và giảm đi khi tài nguyên được giải phóng bởi các Thread. &lt;/p&gt;
+
+&lt;p&gt;Có 2 loại biến semaphore: &lt;br&gt;
+ - &lt;strong&gt;Counting Semaphore&lt;/strong&gt;: Nếu giá trị của chúng có thể tăng giảm 1 sau mỗi lần tài nguyên bị chiếm
+ - &lt;strong&gt;Mutex&lt;/strong&gt;: Nếu giá trị chỉ có thể là 0 và 1&lt;/p&gt;
+
+&lt;p&gt;Xem xét chương trình dưới đây:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;import java.util.concurrent.Executors;  
+import java.util.concurrent.ExecutorService;  
+import java.util.concurrent.Semaphore;
+
+public class SemaphoreDemo  
+{
+   public static void main(String[] args)
+   {
+      final Pool pool = new Pool();
+      Runnable r = new Runnable()
+                   {
+                      @Override
+                      public void run()
+                      {
+                         String name = Thread.currentThread().getName();
+                         try
+                         {
+                            while (true)
+                            {
+                               String item;
+                               System.out.printf("%s acquiring %s%n", name,
+                                                 item = pool.getItem());
+                               Thread.sleep(200+(int)(Math.random()*100));
+                               System.out.printf("%s putting back %s%n",
+name,  
+                                                 item);
+                               pool.putItem(item);
+                            }
+                         }
+                         catch (InterruptedException ie)
+                         {
+                            System.out.printf("%s interrupted%n", name);
+                         }
+                      }
+                   };
+      ExecutorService[] executors = new
+ExecutorService[Pool.MAX_AVAILABLE+1];  
+      for (int i = 0; i &amp;lt; executors.length; i++)
+      {
+         executors[i] = Executors.newSingleThreadExecutor();
+         executors[i].execute(r);
+      }
+   }
+}
+
+final class Pool  
+{
+   public static final int MAX_AVAILABLE = 10;
+
+   private Semaphore available = new Semaphore(MAX_AVAILABLE, true);
+   private String[] items;
+   private boolean[] used = new boolean[MAX_AVAILABLE];
+
+   Pool()
+   {
+      items = new String[MAX_AVAILABLE];
+      for (int i = 0; i &amp;lt; items.length; i++)
+         items[i] = "ITEM"+i;
+   }
+
+   String getItem() throws InterruptedException
+   {
+      available.acquire();
+      return getNextAvailableItem();
+   }
+
+   void putItem(String item)
+   {
+      if (markAsUnused(item))
+         available.release();
+   }
+
+   private synchronized String getNextAvailableItem()
+   {
+      for (int i = 0; i &amp;lt; MAX_AVAILABLE; ++i)
+      {
+         if (!used[i])
+         {
+            used[i] = true;
+            return items[i];
+         }
+      }
+      return null; // not reached
+   }
+
+   private synchronized boolean markAsUnused(String item)
+   {
+      for (int i = 0; i &amp;lt; MAX_AVAILABLE; ++i)
+      {
+         if (item == items[i])
+         {
+            if (used[i])
+            {
+               used[i] = false;
+               return true;
+            }
+            else
+               return false;
+         }
+      }
+      return false;
+   }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Chương trình trên gồm 2 class là &lt;code&gt;SemaphoreDemo&lt;/code&gt; và &lt;code&gt;Pool&lt;/code&gt;. Class &lt;code&gt;SemaphoreDemo&lt;/code&gt; tạo ra các Executor để truy nhập đến tài nguyên &lt;code&gt;String items&lt;/code&gt; từ &lt;code&gt;Pool&lt;/code&gt; thông qua các method &lt;code&gt;getItem()&lt;/code&gt; và &lt;code&gt;putItem()&lt;/code&gt;. Để hạn chế số lượng max Thread &lt;code&gt;MAX_AVAILABLE:= 10&lt;/code&gt;có thể đồng thời truy nhập đến các &lt;code&gt;items&lt;/code&gt; trong class pool có khai báo một semaphore &lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;private Semaphore available = new Semaphore(MAX_AVAILABLE, true);  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Mỗi khi chiếm tài nguyên một item thì semaphore này sẽ tăng lên một bằng cách gọi method &lt;br&gt;
+&lt;code&gt;available.acquire()&lt;/code&gt; và giảm đi một khi giải phóng item này &lt;code&gt;available.release()&lt;/code&gt;. Nếu số lượng Thread đang truy nhập tới tài nguyên &lt;code&gt;items&lt;/code&gt; mà vượt quá 10 thì các thread khác phải chờ cho đến khi có một thread bất kỳ giải phóng 1 tài nguyên nào đó. Đây là kết quả sau khi chạy chương trình:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;pool-1-thread-1 acquiring ITEM0  
+pool-9-thread-1 acquiring ITEM9  
+pool-7-thread-1 acquiring ITEM8  
+pool-5-thread-1 acquiring ITEM7  
+pool-3-thread-1 acquiring ITEM6  
+pool-10-thread-1 acquiring ITEM5  
+pool-8-thread-1 acquiring ITEM4  
+pool-6-thread-1 acquiring ITEM3  
+pool-4-thread-1 acquiring ITEM2  
+pool-2-thread-1 acquiring ITEM1  
+pool-5-thread-1 putting back ITEM7  
+pool-11-thread-1 acquiring ITEM7  
+pool-9-thread-1 putting back ITEM9  
+pool-5-thread-1 acquiring ITEM9  
+pool-7-thread-1 putting back ITEM8  
+pool-9-thread-1 acquiring ITEM8  
+pool-3-thread-1 putting back ITEM6  
+pool-7-thread-1 acquiring ITEM6  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Như kết quả ở trên tổng cộng có 11 thread đang tranh giành 10 tài nguyên. Thread &lt;code&gt;pool-11-thread-1&lt;/code&gt; bị buộc phải chờ cho đến khi thread &lt;code&gt;pool-5-thread-1&lt;/code&gt; giải phóng &lt;code&gt;ITEM7&lt;/code&gt; thì nó mới có thể truyê nhập được vào các tài nguyên khác.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Barrier&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Dùng để đồng bộ các thread chạy song song cùng chờ nhau tại một điểm nào đó trong chương trình. Nghe có vẻ hơi trừu tượng phải không? Bạn có thể hình dung nó như tấm Bare dùng để chặn các phương tiện giao thông, mỗi Thread giống như một phương tiện giao thông chạy song song trên đường. Các phương tiện này dù chạy nhanh hay chậm cũng sẽ phải dừng lại tại tấm Bare. Để sau đó bạn có thể thu vé hay kiểm tra ...&lt;/p&gt;
+
+&lt;p&gt;Java có implement Barrier bằng class &lt;code&gt;java.lang.concurrent.CyclicBarrier&lt;/code&gt;. Barrier được gọi là &lt;code&gt;Cyclic&lt;/code&gt; hay &lt;code&gt;Tuần hoàn&lt;/code&gt; bởi chúng có thể tái sử dụng sau mỗi lần các waiting Thread được cho phép chạy qua. Dưới đây là Demo:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;import java.util.concurrent.BrokenBarrierException;  
+import java.util.concurrent.CyclicBarrier;  
+import java.util.concurrent.Executors;  
+import java.util.concurrent.ExecutorService;  
+import java.util.concurrent.TimeUnit;
+
+public class CyclicBarrierDemo  
+{
+   public static void main(String[] args)
+   {
+      Runnable action = new Runnable()
+                        {
+                           @Override
+                           public void run()
+                           {
+                              String name =
+Thread.currentThread().getName();  
+                              System.out.printf("Thread %s "+
+                                                "executing barrier
+action.%n",  
+                                                name);
+                           }
+                        };
+      final CyclicBarrier barrier = new CyclicBarrier(3, action);
+      Runnable task = new Runnable()
+                      {
+                         @Override
+                         public void run()
+                         {
+                            String name = Thread.currentThread().getName();
+                            System.out.printf("%s about to join game...%n",
+                                              name);
+                            try
+                            {
+                               barrier.await();
+                            }
+                            catch (BrokenBarrierException bbe)
+                            {
+                               System.out.println("barrier is broken");
+                               return;
+                            }
+                            catch (InterruptedException ie)
+                            {
+                               System.out.println("thread interrupted");
+                               return;
+                            }
+                            System.out.printf("%s has joined game%n", name);
+                         }
+                      };
+      ExecutorService[] executors = new ExecutorService[]
+                                    {
+                                       Executors.newSingleThreadExecutor(),
+                                       Executors.newSingleThreadExecutor(),
+                                       Executors.newSingleThreadExecutor()
+                                    };
+      for (ExecutorService executor: executors)
+      {
+         executor.execute(task);
+         executor.shutdown();
+      }
+   }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Chương trình trên trong có vẻ phức tạp nhưng tư tưởng khá đơn giản. Có 3 thread cùng thực thi 1 task song song, tuy nhiên tại thời điểm trong khối try &lt;code&gt;barrier.await()&lt;/code&gt; 3 thread này phải chờ nhau, không thread nào được tiếp tục thực thi cho đến khi task &lt;code&gt;action&lt;/code&gt; kết thúc. Barrier sẽ gọi &lt;code&gt;action&lt;/code&gt; khi có 3 thread chạy đến điểm &lt;code&gt;barrier.await()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Sau khi biên dịch và chạy trương chình bạn sẽ nhận được output như dưới đây:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;pool-1-thread-1 about to join game...  
+pool-3-thread-1 about to join game...  
+pool-2-thread-1 about to join game...  
+Thread pool-2-thread-1 executing barrier action.  
+pool-2-thread-1 has joined game  
+pool-3-thread-1 has joined game  
+pool-1-thread-1 has joined game  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Một điều lưu ý là Semaphore và Barrier là những thuật ngữ chung sử dụng trong lập trình song song nói chung không chỉ riêng cho Java hay bất cứ ngôn ngữ lập trình nào khác.&lt;/p&gt;</content:encoded></item><item><title>Java HashSet vs. TreeSet vs. LinkedHashSet</title><description>&lt;p&gt;Set là một cấu trúc dữ liệu lưu trữ các phần tử không bị trùng lặp, Java đã cài đặt một số class cho cấu trúc dữ liệu này. Mỗi cách implementation đều có những đặc điểm riêng dùng cho các mục đích phù hợp khác nhau: HashSet, TreeSet and&lt;/p&gt;</description><link>http://localhost:2368/hashset-treeset-linkedhashset/</link><guid isPermaLink="false">61918d35-10b2-43e5-b9d5-738bfa5e0e12</guid><category>java</category><dc:creator>ngocnv</dc:creator><pubDate>Sun, 30 Oct 2016 14:54:38 GMT</pubDate><content:encoded>&lt;p&gt;Set là một cấu trúc dữ liệu lưu trữ các phần tử không bị trùng lặp, Java đã cài đặt một số class cho cấu trúc dữ liệu này. Mỗi cách implementation đều có những đặc điểm riêng dùng cho các mục đích phù hợp khác nhau: HashSet, TreeSet and LinkedHashSet do vậy việc nắm bắt được khi nào thì sử dụng chúng một cách hiệu quả là điều cực kỳ quan trọng. &lt;/p&gt;
+
+&lt;p&gt;Tóm tắt một cách ngắn gọn, nếu ưu tiên về tốc độ sử dụng HashSet, nếu cần một Set được sắp xếp chọn TreeSet, còn nếu muốn đọc một Set theo thứ tự mà các phần tử được insert vào thì dùng LinkedHashSet.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;HashSet được implement bằng cách sử dụng một hash table. Các thành phần không được sắp xếp theo thứ tự. Các thao tác add, remove và contains có độ phức tạp là O(1)&lt;/li&gt;
+&lt;li&gt;TreeSet được implement bằng cách sử dụng cấu trúc dữ liệu tree, các thành phần trong Set được sắp xếp theo thứ tự. Tuy nhiên với các thao tác add, remove và contains độ phức tạp của chúng là O(log(n)).&lt;/li&gt;
+&lt;li&gt;LinkedHashSet được implement như một hash table với mỗi phần tử trong bảng băm này sẽ trỏ đến phần tử đầu tiên của một Linked List. Vì vậy mà các phần tử có thể được sắp xếp, và thời gian thao tác với các method cơ bản add, remove và contains là 0(1).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;TreeSet tree = new TreeSet();  
+tree.add(12);  
+tree.add(63);  
+tree.add(34);  
+tree.add(45);
+
+Iterator iterator = tree.iterator();  
+System.out.print("Tree set data: ");  
+while (iterator.hasNext()) {  
+    System.out.print(iterator.next() + " ");
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:  &lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt; Tree set data: 12 34 45 63  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Bây giờ hãy define một class Dog như dưới đây:  &lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;class Dog {  
+int size;
+
+public Dog(int s) {  
+size = s;  
+}
+
+public String toString() {  
+return size + "";  
+}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Sau đó add vào vài phần tử:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;import java.util.Iterator;  
+import java.util.TreeSet;
+
+public class TestTreeSet {  
+public static void main(String[] args) {  
+TreeSet dset = new TreeSet();  
+dset.add(new Dog(2));  
+dset.add(new Dog(1));  
+dset.add(new Dog(3));
+
+Iterator iterator = dset.iterator();  
+while (iterator.hasNext()) {  
+System.out.print(iterator.next() + " ");  
+}
+}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Compile ok, but run-time error xảy ra.  &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Exception in thread "main" java.lang.ClassCastException:  
+collection.Dog cannot be cast to java.lang.Comparable  
+at java.util.TreeMap.put(Unknown Source)  
+at java.util.TreeSet.add(Unknown Source)  
+at collection.TestTreeSet.main(TestTreeSet.java:22)  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Bởi vì TreeSet được sắp xếp, do đó Dog object cần phải implement interface Comparable như dưới đây:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;class Dog implements Comparable{  
+int size;
+
+public Dog(int s) {  
+size = s;  
+}
+
+public String toString() {  
+return size + "";  
+}
+
+@Override
+public int compareTo(Dog o) {  
+        return size - o.size;
+}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The output là:  &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1 2 3  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;HashSet Example:  &lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;HashSet dset = new HashSet();  
+dset.add(new Dog(2));  
+dset.add(new Dog(1));  
+dset.add(new Dog(3));  
+dset.add(new Dog(5));  
+dset.add(new Dog(4));  
+Iterator iterator = dset.iterator();  
+while (iterator.hasNext()) {  
+System.out.print(iterator.next() + " ");  
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output:  &lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;5 3 2 1 4  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note: Các phần tử ko được sắp xếp theo bất kỳ thứ tự nào&lt;/p&gt;
+
+&lt;p&gt;LinkedHashSet Example&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;LinkedHashSet dset = new LinkedHashSet();  
+dset.add(new Dog(2));  
+dset.add(new Dog(1));  
+dset.add(new Dog(3));  
+dset.add(new Dog(5));  
+dset.add(new Dog(4));  
+Iterator iterator = dset.iterator();  
+while (iterator.hasNext()) {  
+System.out.print(iterator.next() + " ");  
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Các phần tử sẽ có thứ tự là thứ được được insert vào set  &lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;2 1 3 5 4  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Performance testing
+Thử test hiệu năng của 3 cách implement bằng cách sử dụn add() method.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;public static void main(String[] args) {  
+Random r = new Random();  
+HashSet hashSet = new HashSet();  
+TreeSet treeSet = new TreeSet();  
+LinkedHashSet linkedSet = new LinkedHashSet();
+
+long startTime = System.nanoTime();  
+for (int i = 0; i &amp;lt; 1000; i++) {  
+int x = r.nextInt(1000 - 10) + 10;  
+hashSet.add(new Dog(x));  
+}
+
+long endTime = System.nanoTime();  
+long duration = endTime - startTime;  
+System.out.println("HashSet: " + duration);
+
+startTime = System.nanoTime();  
+for (int i = 0; i &amp;lt; 1000; i++) {  
+int x = r.nextInt(1000 - 10) + 10;  
+treeSet.add(new Dog(x));  
+}
+
+endTime = System.nanoTime();  
+duration = endTime - startTime;  
+System.out.println("TreeSet: " + duration);
+
+startTime = System.nanoTime();  
+for (int i = 0; i &amp;lt; 1000; i++) {  
+int x = r.nextInt(1000 - 10) + 10;  
+linkedSet.add(new Dog(x));  
+}
+
+endTime = System.nanoTime();  
+duration = endTime - startTime;  
+System.out.println("LinkedHashSet: " + duration);\  
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Kết quả cho thấy HashSet thao tác nhanh nhất với method add():  &lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;HashSet: 2244768  
+TreeSet: 3549314  
+LinkedHashSet: 2263320  
+&lt;/code&gt;&lt;/pre&gt;</content:encoded></item><item><title>Regex ăn xâu kiểu greedy và lazy</title><description>&lt;p&gt;Trong quá trình làm việc với String tôi có gặp một bài toán nhỏ là làm thế nào để loại bỏ hết các xâu con nằm trong dấu đóng mở ngoặc của một xâu bất kỳ &lt;br&gt;
+VD: &lt;br&gt;
+* Công ty (((CT))) trách nhiệm hữu hạn (TNHH) =&gt; Công ty trách nhiệm hữu&lt;/p&gt;</description><link>http://localhost:2368/regex-an-xau-kieu-greedy-va-lazy/</link><guid isPermaLink="false">2b62531f-a19a-4c8d-92eb-f17073b9e4ae</guid><category>java</category><dc:creator>ngocnv</dc:creator><pubDate>Sun, 30 Oct 2016 14:50:28 GMT</pubDate><content:encoded>&lt;p&gt;Trong quá trình làm việc với String tôi có gặp một bài toán nhỏ là làm thế nào để loại bỏ hết các xâu con nằm trong dấu đóng mở ngoặc của một xâu bất kỳ &lt;br&gt;
+VD: &lt;br&gt;
+* Công ty (((CT))) trách nhiệm hữu hạn (TNHH) =&gt; Công ty trách nhiệm hữu hạn&lt;/p&gt;
+
+&lt;p&gt;Điều đầu tiên tôi nghĩ đến là sử dụng regular expression để có thể xử lý ngắn ngọn nhất bài toán này:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;String inputString = "Công ty (((CT))) trách nhiệm hữu hạn (TNHH)";  
+String pattern = "\\(.*\\)";  
+System.out.println("Kết quả: "+inputString.replaceAll(pattern, ""));  
+Kết quả: Công ty  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Tại sao kết quả ko như mong muốn, khi pattern ở trên mới mục đích tìm kiếm tất cả các xâu nằm trong dấu đóng mở ngoặc. Tuy nhiên khi để ý mới thấy rằng xâu đầu vào có rất nhiều dấu mở và đóng ngoặc vậy làm thế nào để pattern trên có thể bắt được vị trí các dấu đóng ngoặc đúng như ý.&lt;/p&gt;
+
+&lt;p&gt;Ở pattern trên '*' dùng để chỉ đến số lượng match với ký tự là từ 0 hoặc nhiều, nó sẽ cố gắng match với nhiều ký tự thỏa mãn nhất có thể. Ở ví dụ trên nó sẽ bắt được ký tự "(" đầu tiên và sau đó cố gắng "ăn" xâu đến vị trí và xâu nó "ăn" được là dài nhất, do đó dấu ")" cuối cùng trong xâu sẽ được "ăn". Đó là lý do vì sao sau khi remove xâu trong dấu đóng mở ngoặc đi kết quả trả về chỉ còn lại xâu "Công ty".
+=&gt; Greedy(tham lam) là thuật ngữ để mô tả cách "ăn" xâu của toán tử "*" này.&lt;/p&gt;
+
+&lt;p&gt;Như vậy trong trường hợp này không thể sử dụng cách "ăn" xâu greedy này được, vậy trong regex có cách ăn xâu nào khác không? Câu trả lời là có, trái ngược với cách ăn xâu greedy ở trên là cách ăn xâu lazy. Nó sẽ "ăn" xâu ngắn nhất, ngay khi điều kiện match được thỏa mãn. Trong regex dùng toán tử "?" để thể hiện cách "ăn" xâu này. Viết và chạy lại các câu lệnh trên kết quả như sau:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;String inputString = "Công ty (((CT))) trách nhiệm hữu hạn (TNHH)";  
+String pattern = "\\(.*?\\)";  
+System.out.println("Kết quả: "+inputString.replaceAll(pattern, ""));  
+Kết quả: Công ty )) trách nhiệm hữu hạn  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Vẫn không thỏa mãn, vì dùng cách ăn xâu lazy này chỉ bắt được các cặp () không lồng nhau như trong trường hợp dưới&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Công ty (CT) trách nhiệm hữu hạn (TNHH) =&gt; Công ty trách nhiệm hữu hạn&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Như vậy dùng regex chưa giải quyết được bài toán này, nên tôi phải sử dụng stack để đẩy lần lượt các dấu ')' sau đó cứ bắt gặp vị trí dấu '(' sẽ đánh dấu và xóa xâu string có vị trí lấy từ vị trí này đến vị trí dấu ')' lấy trong stack.pop().&lt;/p&gt;
+
+&lt;p&gt;Đây là đoạn mã:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;String inputString = Công ty (((CT))) trách nhiệm hữu hạn (TNHH);  
+System.out.println(removeTextInBracket(inputString));  
+Kết quả: Công ty  trách nhiệm hữu hạn
+
+// Đẩy các dấu đóng ngoặc vào stack đồng thời remove xâu con khi gặp dấu mở ngoặc
+public String removeTextInBracket(String text) {  
+        int length = text.length();
+        int tempLength;
+        Stack&amp;lt;Integer&amp;gt; st = new Stack&amp;lt;Integer&amp;gt;();
+        for (int i = length-1; i &amp;gt;= 0; i--) {
+            if (text.charAt(i) == ')') {
+                st.push(i);
+                continue;
+            }
+            if (text.charAt(i) == '(' &amp;amp;&amp;amp; !st.isEmpty()) {
+                tempLength = text.length();
+                text = text.substring(0, i) + text.substring(st.pop() + 1);
+                updateStack(st, tempLength - text.length());
+            }
+        }
+        return text;
+}
+
+// Update lại vị trí của các dấu đóng mở ngoặc khi độ dài xâu thay đổi.
+private static void updateStack(Stack&amp;lt;Integer&amp;gt; stack, int lengthSpan) {  
+        int size = stack.size();
+        Integer temp;
+        for (int i = 0; i &amp;lt; size; i++) {
+            temp = stack.get(i);
+            stack.remove(i);
+            stack.add(i, temp - lengthSpan);
+        }
+} 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Đến đây chúng ta đã hiểu hơn về cách ăn xâu "greedy" và "lazy" trong regex.&lt;/p&gt;</content:encoded></item></channel></rss>

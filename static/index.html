@@ -22,10 +22,14 @@
     <meta property="og:title" content="Learn Java">
     <meta property="og:description" content="Thoughts, stories and ideas.">
     <meta property="og:url" content="http://localhost:2368/">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="http://localhost:2368/content/images/2016/10/everest.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Learn Java">
     <meta name="twitter:description" content="Thoughts, stories and ideas.">
     <meta name="twitter:url" content="http://localhost:2368/">
+    <meta name="twitter:image" content="http://localhost:2368/content/images/2016/10/everest.jpg">
+    <meta property="og:image:width" content="1920">
+    <meta property="og:image:height" content="1200">
     
     <script type="application/ld+json">
 {
@@ -37,6 +41,12 @@
         "logo": "http://localhost:2368/ghost/img/ghosticon.jpg"
     },
     "url": "http://localhost:2368/",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://localhost:2368/content/images/2016/10/everest.jpg",
+        "width": 1920,
+        "height": 1200
+    },
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://localhost:2368"
@@ -57,6 +67,8 @@
     </a>
     <ul>
             <li class="nav-home nav-current" role="presentation"><a href="index.html">Home</a></li>
+            <li class="nav-java-core" role="presentation"><a href="tag/java/">Java Core</a></li>
+            <li class="nav-spring-framework" role="presentation"><a href="tag/spring/">Spring Framework</a></li>
     </ul>
         <a class="subscribe-button icon-feed" href="rss/index.rss">Subscribe</a>
 </div>
@@ -66,7 +78,7 @@
     <div class="site-wrapper">
 
         
-<header class="main-header no-cover">
+<header class="main-header " style="background-image: url(content/images/2016/10/everest.jpg)">
     <nav class="main-nav overlay clearfix">
         
             <a class="menu-button icon-menu" href="index.html#"><span class="word">Menu</span></a>
@@ -89,17 +101,59 @@
 
 </div>
 
-<article class="post tag-getting-started">
+<article class="post tag-test tag-scala">
     <header class="post-header">
-        <h2 class="post-title"><a href="welcome-to-ghost/">Welcome to Ghost</a></h2>
+        <h2 class="post-title"><a href="autotest-scala/">Autotest GUI với Scala</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by <a class="read-more" href="welcome-to-ghost/">»</a></p>
+        <p>Scala không phải là một ngôn ngữ mới nhưng vẫn còn khá lạ lẫm với các developer , đặc biệt là việc áp dụng Scala trong viết <a class="read-more" href="autotest-scala/">»</a></p>
     </section>
     <footer class="post-meta">
         
         <a href="author/ngocnv/">ngocnv</a>
-         on <a href="tag/getting-started/">Getting Started</a>
+         on <a href="tag/test/">test</a>, <a href="tag/scala/">scala</a>
+        <time class="post-date" datetime="2016-10-30">30 October 2016</time>
+    </footer>
+</article>
+<article class="post tag-java">
+    <header class="post-header">
+        <h2 class="post-title"><a href="java-concurrency/">Java concurrency</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Java platform cung cấp khả năng xử lý multi-threading ở mức low-level, cho phép các developer viết các chương trình chạy song song xử dụng các <a class="read-more" href="java-concurrency/">»</a></p>
+    </section>
+    <footer class="post-meta">
+        
+        <a href="author/ngocnv/">ngocnv</a>
+         on <a href="tag/java/">java</a>
+        <time class="post-date" datetime="2016-10-30">30 October 2016</time>
+    </footer>
+</article>
+<article class="post tag-java">
+    <header class="post-header">
+        <h2 class="post-title"><a href="hashset-treeset-linkedhashset/">Java HashSet vs. TreeSet vs. LinkedHashSet</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Set là một cấu trúc dữ liệu lưu trữ các phần tử không bị trùng lặp, Java đã cài đặt một số class cho cấu trúc <a class="read-more" href="hashset-treeset-linkedhashset/">»</a></p>
+    </section>
+    <footer class="post-meta">
+        
+        <a href="author/ngocnv/">ngocnv</a>
+         on <a href="tag/java/">java</a>
+        <time class="post-date" datetime="2016-10-30">30 October 2016</time>
+    </footer>
+</article>
+<article class="post tag-java">
+    <header class="post-header">
+        <h2 class="post-title"><a href="regex-an-xau-kieu-greedy-va-lazy/">Regex ăn xâu kiểu greedy và lazy</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Trong quá trình làm việc với String tôi có gặp một bài toán nhỏ là làm thế nào để loại bỏ hết các xâu con nằm <a class="read-more" href="regex-an-xau-kieu-greedy-va-lazy/">»</a></p>
+    </section>
+    <footer class="post-meta">
+        
+        <a href="author/ngocnv/">ngocnv</a>
+         on <a href="tag/java/">java</a>
         <time class="post-date" datetime="2016-10-30">30 October 2016</time>
     </footer>
 </article>

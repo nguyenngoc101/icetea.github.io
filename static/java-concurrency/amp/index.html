@@ -1,7 +1,8 @@
+
 <head>
     <meta charset="utf-8">
 
-    <title>Welcome to Ghost</title>
+    <title>Java concurrency</title>
     <meta name="description" content="">
 
     <meta name="HandheldFriendly" content="True">
@@ -14,22 +15,22 @@
     
     <meta property="og:site_name" content="Learn Java">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Welcome to Ghost">
-    <meta property="og:description" content="You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at &amp;lt;your blog URL&amp;gt;/ghost/. When you arrive, you can select this post from a list">
-    <meta property="og:url" content="http://localhost:2368/welcome-to-ghost/">
-    <meta property="article:published_time" content="2016-10-30T13:15:14.000Z">
-    <meta property="article:modified_time" content="2016-10-30T13:15:13.000Z">
-    <meta property="article:tag" content="Getting Started">
+    <meta property="og:title" content="Java concurrency">
+    <meta property="og:description" content="Java platform cung cấp khả năng xử lý multi-threading ở mức low-level, cho phép các developer viết các chương trình chạy song song xử dụng các keywords: synchronized, volatile, wait(), notify() và notifyAll(). Tuy nhiên việc xử lý concurrency ở mức low-level này khó sử dụng khi, hoặc sử dụng">
+    <meta property="og:url" content="http://localhost:2368/java-concurrency/">
+    <meta property="article:published_time" content="2016-10-30T14:56:26.000Z">
+    <meta property="article:modified_time" content="2016-10-30T14:56:26.000Z">
+    <meta property="article:tag" content="java">
     
     <meta property="article:author" content="https://www.facebook.com/nguyenngoc101">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Welcome to Ghost">
-    <meta name="twitter:description" content="You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at &amp;lt;your blog URL&amp;gt;/ghost/. When you arrive, you can select this post from a list">
-    <meta name="twitter:url" content="http://localhost:2368/welcome-to-ghost/">
+    <meta name="twitter:title" content="Java concurrency">
+    <meta name="twitter:description" content="Java platform cung cấp khả năng xử lý multi-threading ở mức low-level, cho phép các developer viết các chương trình chạy song song xử dụng các keywords: synchronized, volatile, wait(), notify() và notifyAll(). Tuy nhiên việc xử lý concurrency ở mức low-level này khó sử dụng khi, hoặc sử dụng">
+    <meta name="twitter:url" content="http://localhost:2368/java-concurrency/">
     <meta name="twitter:label1" content="Written by">
     <meta name="twitter:data1" content="ngocnv">
     <meta name="twitter:label2" content="Filed under">
-    <meta name="twitter:data2" content="Getting Started">
+    <meta name="twitter:data2" content="java">
     
     <script type="application/ld+json">
 {
@@ -49,12 +50,12 @@
         ],
         "description": "I&#x27;m just a java lover"
     },
-    "headline": "Welcome to Ghost",
-    "url": "http://localhost:2368/welcome-to-ghost/",
-    "datePublished": "2016-10-30T13:15:14.000Z",
-    "dateModified": "2016-10-30T13:15:13.000Z",
-    "keywords": "Getting Started",
-    "description": "You&#x27;re live! Nice. We&#x27;ve put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at &amp;lt;your blog URL&amp;gt;/ghost/. When you arrive, you can select this post from a list",
+    "headline": "Java concurrency",
+    "url": "http://localhost:2368/java-concurrency/",
+    "datePublished": "2016-10-30T14:56:26.000Z",
+    "dateModified": "2016-10-30T14:56:26.000Z",
+    "keywords": "java",
+    "description": "Java platform cung cấp khả năng xử lý multi-threading ở mức low-level, cho phép các developer viết các chương trình chạy song song xử dụng các keywords: synchronized, volatile, wait(), notify() và notifyAll(). Tuy nhiên việc xử lý concurrency ở mức low-level này khó sử dụng khi, hoặc sử dụng",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://localhost:2368"
@@ -847,7 +848,7 @@
         <article class="post">
 
             <header class="post-header">
-                <h1 class="post-title">Welcome to Ghost</h1>
+                <h1 class="post-title">Java concurrency</h1>
                 <section class="post-meta">
                     <p class="author">by <a href="../../author/ngocnv/">ngocnv</a></p>
                     <time class="post-date" datetime="2016-10-30">2016-10-30</time>
@@ -855,72 +856,375 @@
             </header>
             <section class="post-content">
 
-                <p>You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at <code>&lt;your blog URL&gt;/ghost/</code>. When you arrive, you can select this post from a list on the left and see a preview of it on the right. Click the little pencil icon at the top of the preview to edit this post and read the next section!</p>
+                <p>Java platform cung cấp khả năng xử lý multi-threading ở mức low-level, cho phép các developer viết các chương trình chạy song song xử dụng các keywords: synchronized, volatile, wait(), notify() và notifyAll(). Tuy nhiên việc xử lý concurrency ở mức low-level này khó sử dụng khi, hoặc sử dụng không đúng cách khi gặp phải những vấn đề  khó nhần trong xử lý multi-threading như: deadlock, thread stavation, race condition. Chính vì vậy mà bắt đầu từ Java5 trở đi, framework Concurrency(java.util.concurrent) được thiết kế để giải quyết những vấn đề trền, ở mức high-level hơn giúp các developer dễ dàng quản lý resource, thread và đồng bộ các tiến trình hơn.</p>
 
-<h2 id="gettingstarted">Getting Started</h2>
-
-<p>Ghost uses something called Markdown for writing. Essentially, it's a shorthand way to manage your post formatting as you write!</p>
-
-<p>Writing in Markdown is really easy. In the left hand panel of Ghost, you simply write as you normally would. Where appropriate, you can use <em>shortcuts</em> to <strong>style</strong> your content. For example, a list:</p>
+<p>Bài viết này sẽ đề cập đến một vài utility của framework để hy vọng có thể  giúp chúng ta dễ tiếp cận và xử lý các ứng dụng chạy concurrency.</p>
 
 <ul>
-<li>Item number one</li>
-<li>Item number two
-<ul><li>A nested item</li></ul></li>
-<li>A final item</li>
+<li><strong>The Executor framework</strong></li>
 </ul>
 
-<p>or with numbers!</p>
+<p>Trong xử lý multi-thread, task là một đơn vị công việc. Một vấn đề khi sử dụng thư viện primative là sự phụ thuộc quá chặt chẽ giữa task và thread thực thi task đó. Lấy ví dụ:</p>
 
-<ol>
-<li>Remember to buy some milk  </li>
-<li>Drink the milk  </li>
-<li>Tweet that I remembered to buy the milk, and drank it</li>
-</ol>
+<pre><code class="language-java">import java.io.IOException;
 
-<h3 id="links">Links</h3>
+import java.net.ServerSocket;  
+import java.net.Socket;
 
-<p>Want to link to a source? No problem. If you paste in a URL, like <a href="http://ghost.org">http://ghost.org</a> - it'll automatically be linked up. But if you want to customise your anchor text, you can do that too! Here's a link to <a href="http://ghost.org">the Ghost website</a>. Neat.</p>
+class Server  
+{
+   public static void main(String[] args) throws IOException
+   {
+      ServerSocket socket = new ServerSocket(9000);
+      while (true)
+      {
+         final Socket s = socket.accept();
+         Runnable r = new Runnable()
+                      {
+                         @@Override
+                         public void run()
+                         {
+                            doWork(s);
+                         }
+                      };
+         new Thread(r).start();
+      }
+   }
 
-<h3 id="whataboutimages">What about Images?</h3>
-
-<p>Images work too! Already know the URL of the image you want to include in your article? Simply paste it in like this to make it show up:</p>
-
-<p><amp-img src="https://ghost.org/images/ghost.png" alt="The Ghost Logo" width="800" height="400" layout="responsive"></amp-img></p>
-
-<p>Not sure which image you want to use yet? That's ok too. Leave yourself a descriptive placeholder and keep writing. Come back later and drag and drop the image in to upload:</p>
-
-<h3 id="quoting">Quoting</h3>
-
-<p>Sometimes a link isn't enough, you want to quote someone on what they've said. Perhaps you've started using a new blogging platform and feel the sudden urge to share their slogan? A quote might be just the way to do it!</p>
-
-<blockquote>
-  <p>Ghost - Just a blogging platform</p>
-</blockquote>
-
-<h3 id="workingwithcode">Working with Code</h3>
-
-<p>Got a streak of geek? We've got you covered there, too. You can write inline <code>&lt;code&gt;</code> blocks really easily with back ticks. Want to show off something more comprehensive? 4 spaces of indentation gets you there.</p>
-
-<pre><code>.awesome-thing {
-    display: block;
-    width: 100%;
+   static void doWork(Socket s)
+   {
+   }
 }
 </code></pre>
 
-<h3 id="readyforabreak">Ready for a Break?</h3>
+<p>Ở đoạn code trên mỗi khi nhận một kết nối từ client đến server sẽ tạo một thread mới để xử lý tác vụ. Rõ ràng các xử lý này sẽ có vẫn đề khi có nhiều kết nối đến server, số lượng thread phải tạo mới sẽ tăng lên dẫn đến tràn nhớ hoặc số lượng thread được tạo ra vượt quá số lượng MAX_THREAD mà hệ điều hành cho phép. Do đó chương trình có thể bị chết ngay lập tức.</p>
 
-<p>Throw 3 or more dashes down on any new line and you've got yourself a fancy new divider. Aw yeah.</p>
+<p>Để  giải quyết vấn đề này thay vì mỗi task tạo một thread, chúng ta sẽ sử dụng một thread pool chứa một số lượng các thread nhất định, các thread này sẽ có thực thi các task nếu chúng ở trạng thái active. Đoạn code bên trên có thể được viết lại như sau:</p>
 
-<hr>
+<pre><code class="language-java">import java.io.IOException;
 
-<h3 id="advancedusage">Advanced Usage</h3>
+import java.net.ServerSocket;  
+import java.net.Socket;
 
-<p>There's one fantastic secret about Markdown. If you want, you can write plain old HTML and it'll still work! Very flexible.</p>
+import java.util.concurrent.Executor;  
+import java.util.concurrent.Executors;
 
-<p></p>
+class Server  
+{
+   static Executor pool = Executors.newFixedThreadPool(5);
 
-<p>That should be enough to get you started. Have fun - and let us know what you think :)</p>
+   public static void main(String[] args) throws IOException
+   {
+      ServerSocket socket = new ServerSocket(9000);
+      while (true)
+      {
+         final Socket s = socket.accept();
+         Runnable r = new Runnable()
+                      {
+                         @@Override
+                         public void run()
+                         {
+                            doWork(s);
+                         }
+                      };
+         pool.execute(r);
+      }
+   }
+
+   static void doWork(Socket s)
+   {
+   }
+}
+</code></pre>
+
+<p>Một ví dụ khác về việc sử dụng Executor để đọc nội dụng một webpage</p>
+
+<pre><code class="language-java">public class ReadWebPage  
+{
+   public static void main(final String[] args)
+   {
+      if (args.length != 1)
+      {
+         System.err.println("usage: java ReadWebPage url");
+         return;
+      }
+      ExecutorService executor = Executors.newSingleThreadExecutor();
+      Callable&lt;List&lt;String&gt;&gt; callable;
+      callable = new Callable&lt;List&lt;String&gt;&gt;()
+                 {
+                    @@Override
+                    public List&lt;String&gt; call()
+                       throws IOException, MalformedURLException
+                    {
+                       List&lt;String&gt; lines = new ArrayList&lt;&gt;();
+                       URL url = new URL(args[0]);
+                       HttpURLConnection con;
+                       con = (HttpURLConnection) url.openConnection();
+                       InputStreamReader isr;
+                       isr = new InputStreamReader(con.getInputStream());
+                       BufferedReader br;
+                       br = new BufferedReader(isr);
+                       String line;
+                       while ((line = br.readLine()) != null)
+                          lines.add(line);
+                       return lines;
+                    }
+                 };
+      Future&lt;List&lt;String&gt;&gt; future = executor.submit(callable);
+      try
+      {
+         List&lt;String&gt; lines = future.get(5, TimeUnit.SECONDS);
+         for (String line: lines)
+            System.out.println(line);
+      }
+      catch (ExecutionException ee)
+      {
+         System.err.println("Callable through exception: "+ee.getMessage());
+      }
+      catch (InterruptedException | TimeoutException eite)
+      {
+         System.err.println("URL not responding");
+      }
+      executor.shutdown();
+    }
+}
+</code></pre>
+
+<p>Ở đoạn code trên một single thread được taọ ra để  thực hiện đọc webpage được define trong phương thức call() của interface Callable. Sau khi submit task, thử lấy kết quả sau 5s. Nếu webpage được đọc xong thì kết quả đươc trả về còn nếu sau 5s thì TimeoutException sẽ được ném ra.</p>
+
+<ul>
+<li><strong>Semaphore</strong></li>
+</ul>
+
+<p>Là một biến dùng để hạn chế truy nhập tới tài nguyên dùng chung trong môi trường multi-threading. Giá trị của nó được tăng lên khi tài nguyên bị chiếm và giảm đi khi tài nguyên được giải phóng bởi các Thread. </p>
+
+<p>Có 2 loại biến semaphore: <br>
+ - <strong>Counting Semaphore</strong>: Nếu giá trị của chúng có thể tăng giảm 1 sau mỗi lần tài nguyên bị chiếm
+ - <strong>Mutex</strong>: Nếu giá trị chỉ có thể là 0 và 1</p>
+
+<p>Xem xét chương trình dưới đây:</p>
+
+<pre><code class="language-java">import java.util.concurrent.Executors;  
+import java.util.concurrent.ExecutorService;  
+import java.util.concurrent.Semaphore;
+
+public class SemaphoreDemo  
+{
+   public static void main(String[] args)
+   {
+      final Pool pool = new Pool();
+      Runnable r = new Runnable()
+                   {
+                      @Override
+                      public void run()
+                      {
+                         String name = Thread.currentThread().getName();
+                         try
+                         {
+                            while (true)
+                            {
+                               String item;
+                               System.out.printf("%s acquiring %s%n", name,
+                                                 item = pool.getItem());
+                               Thread.sleep(200+(int)(Math.random()*100));
+                               System.out.printf("%s putting back %s%n",
+name,  
+                                                 item);
+                               pool.putItem(item);
+                            }
+                         }
+                         catch (InterruptedException ie)
+                         {
+                            System.out.printf("%s interrupted%n", name);
+                         }
+                      }
+                   };
+      ExecutorService[] executors = new
+ExecutorService[Pool.MAX_AVAILABLE+1];  
+      for (int i = 0; i &lt; executors.length; i++)
+      {
+         executors[i] = Executors.newSingleThreadExecutor();
+         executors[i].execute(r);
+      }
+   }
+}
+
+final class Pool  
+{
+   public static final int MAX_AVAILABLE = 10;
+
+   private Semaphore available = new Semaphore(MAX_AVAILABLE, true);
+   private String[] items;
+   private boolean[] used = new boolean[MAX_AVAILABLE];
+
+   Pool()
+   {
+      items = new String[MAX_AVAILABLE];
+      for (int i = 0; i &lt; items.length; i++)
+         items[i] = "ITEM"+i;
+   }
+
+   String getItem() throws InterruptedException
+   {
+      available.acquire();
+      return getNextAvailableItem();
+   }
+
+   void putItem(String item)
+   {
+      if (markAsUnused(item))
+         available.release();
+   }
+
+   private synchronized String getNextAvailableItem()
+   {
+      for (int i = 0; i &lt; MAX_AVAILABLE; ++i)
+      {
+         if (!used[i])
+         {
+            used[i] = true;
+            return items[i];
+         }
+      }
+      return null; // not reached
+   }
+
+   private synchronized boolean markAsUnused(String item)
+   {
+      for (int i = 0; i &lt; MAX_AVAILABLE; ++i)
+      {
+         if (item == items[i])
+         {
+            if (used[i])
+            {
+               used[i] = false;
+               return true;
+            }
+            else
+               return false;
+         }
+      }
+      return false;
+   }
+}
+</code></pre>
+
+<p>Chương trình trên gồm 2 class là <code>SemaphoreDemo</code> và <code>Pool</code>. Class <code>SemaphoreDemo</code> tạo ra các Executor để truy nhập đến tài nguyên <code>String items</code> từ <code>Pool</code> thông qua các method <code>getItem()</code> và <code>putItem()</code>. Để hạn chế số lượng max Thread <code>MAX_AVAILABLE:= 10</code>có thể đồng thời truy nhập đến các <code>items</code> trong class pool có khai báo một semaphore </p>
+
+<pre><code class="language-java">private Semaphore available = new Semaphore(MAX_AVAILABLE, true);  
+</code></pre>
+
+<p>Mỗi khi chiếm tài nguyên một item thì semaphore này sẽ tăng lên một bằng cách gọi method <br>
+<code>available.acquire()</code> và giảm đi một khi giải phóng item này <code>available.release()</code>. Nếu số lượng Thread đang truy nhập tới tài nguyên <code>items</code> mà vượt quá 10 thì các thread khác phải chờ cho đến khi có một thread bất kỳ giải phóng 1 tài nguyên nào đó. Đây là kết quả sau khi chạy chương trình:</p>
+
+<pre><code class="language-java">pool-1-thread-1 acquiring ITEM0  
+pool-9-thread-1 acquiring ITEM9  
+pool-7-thread-1 acquiring ITEM8  
+pool-5-thread-1 acquiring ITEM7  
+pool-3-thread-1 acquiring ITEM6  
+pool-10-thread-1 acquiring ITEM5  
+pool-8-thread-1 acquiring ITEM4  
+pool-6-thread-1 acquiring ITEM3  
+pool-4-thread-1 acquiring ITEM2  
+pool-2-thread-1 acquiring ITEM1  
+pool-5-thread-1 putting back ITEM7  
+pool-11-thread-1 acquiring ITEM7  
+pool-9-thread-1 putting back ITEM9  
+pool-5-thread-1 acquiring ITEM9  
+pool-7-thread-1 putting back ITEM8  
+pool-9-thread-1 acquiring ITEM8  
+pool-3-thread-1 putting back ITEM6  
+pool-7-thread-1 acquiring ITEM6  
+</code></pre>
+
+<p>Như kết quả ở trên tổng cộng có 11 thread đang tranh giành 10 tài nguyên. Thread <code>pool-11-thread-1</code> bị buộc phải chờ cho đến khi thread <code>pool-5-thread-1</code> giải phóng <code>ITEM7</code> thì nó mới có thể truyê nhập được vào các tài nguyên khác.</p>
+
+<ul>
+<li><strong>Barrier</strong></li>
+</ul>
+
+<p>Dùng để đồng bộ các thread chạy song song cùng chờ nhau tại một điểm nào đó trong chương trình. Nghe có vẻ hơi trừu tượng phải không? Bạn có thể hình dung nó như tấm Bare dùng để chặn các phương tiện giao thông, mỗi Thread giống như một phương tiện giao thông chạy song song trên đường. Các phương tiện này dù chạy nhanh hay chậm cũng sẽ phải dừng lại tại tấm Bare. Để sau đó bạn có thể thu vé hay kiểm tra ...</p>
+
+<p>Java có implement Barrier bằng class <code>java.lang.concurrent.CyclicBarrier</code>. Barrier được gọi là <code>Cyclic</code> hay <code>Tuần hoàn</code> bởi chúng có thể tái sử dụng sau mỗi lần các waiting Thread được cho phép chạy qua. Dưới đây là Demo:</p>
+
+<pre><code class="language-java">import java.util.concurrent.BrokenBarrierException;  
+import java.util.concurrent.CyclicBarrier;  
+import java.util.concurrent.Executors;  
+import java.util.concurrent.ExecutorService;  
+import java.util.concurrent.TimeUnit;
+
+public class CyclicBarrierDemo  
+{
+   public static void main(String[] args)
+   {
+      Runnable action = new Runnable()
+                        {
+                           @Override
+                           public void run()
+                           {
+                              String name =
+Thread.currentThread().getName();  
+                              System.out.printf("Thread %s "+
+                                                "executing barrier
+action.%n",  
+                                                name);
+                           }
+                        };
+      final CyclicBarrier barrier = new CyclicBarrier(3, action);
+      Runnable task = new Runnable()
+                      {
+                         @Override
+                         public void run()
+                         {
+                            String name = Thread.currentThread().getName();
+                            System.out.printf("%s about to join game...%n",
+                                              name);
+                            try
+                            {
+                               barrier.await();
+                            }
+                            catch (BrokenBarrierException bbe)
+                            {
+                               System.out.println("barrier is broken");
+                               return;
+                            }
+                            catch (InterruptedException ie)
+                            {
+                               System.out.println("thread interrupted");
+                               return;
+                            }
+                            System.out.printf("%s has joined game%n", name);
+                         }
+                      };
+      ExecutorService[] executors = new ExecutorService[]
+                                    {
+                                       Executors.newSingleThreadExecutor(),
+                                       Executors.newSingleThreadExecutor(),
+                                       Executors.newSingleThreadExecutor()
+                                    };
+      for (ExecutorService executor: executors)
+      {
+         executor.execute(task);
+         executor.shutdown();
+      }
+   }
+}
+</code></pre>
+
+<p>Chương trình trên trong có vẻ phức tạp nhưng tư tưởng khá đơn giản. Có 3 thread cùng thực thi 1 task song song, tuy nhiên tại thời điểm trong khối try <code>barrier.await()</code> 3 thread này phải chờ nhau, không thread nào được tiếp tục thực thi cho đến khi task <code>action</code> kết thúc. Barrier sẽ gọi <code>action</code> khi có 3 thread chạy đến điểm <code>barrier.await()</code>.</p>
+
+<p>Sau khi biên dịch và chạy trương chình bạn sẽ nhận được output như dưới đây:</p>
+
+<pre><code class="language-java">pool-1-thread-1 about to join game...  
+pool-3-thread-1 about to join game...  
+pool-2-thread-1 about to join game...  
+Thread pool-2-thread-1 executing barrier action.  
+pool-2-thread-1 has joined game  
+pool-3-thread-1 has joined game  
+pool-1-thread-1 has joined game  
+</code></pre>
+
+<p>Một điều lưu ý là Semaphore và Barrier là những thuật ngữ chung sử dụng trong lập trình song song nói chung không chỉ riêng cho Java hay bất cứ ngôn ngữ lập trình nào khác.</p>
 
             </section>
 

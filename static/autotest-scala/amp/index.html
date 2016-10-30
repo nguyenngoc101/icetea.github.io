@@ -1,7 +1,8 @@
+
 <head>
     <meta charset="utf-8">
 
-    <title>Welcome to Ghost</title>
+    <title>Autotest GUI với Scala</title>
     <meta name="description" content="">
 
     <meta name="HandheldFriendly" content="True">
@@ -14,22 +15,23 @@
     
     <meta property="og:site_name" content="Learn Java">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Welcome to Ghost">
-    <meta property="og:description" content="You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at &amp;lt;your blog URL&amp;gt;/ghost/. When you arrive, you can select this post from a list">
-    <meta property="og:url" content="http://localhost:2368/welcome-to-ghost/">
-    <meta property="article:published_time" content="2016-10-30T13:15:14.000Z">
-    <meta property="article:modified_time" content="2016-10-30T13:15:13.000Z">
-    <meta property="article:tag" content="Getting Started">
+    <meta property="og:title" content="Autotest GUI với Scala">
+    <meta property="og:description" content="Scala không phải là một ngôn ngữ mới nhưng vẫn còn khá lạ lẫm với các developer , đặc biệt là việc áp dụng Scala trong viết test. Ngày càng có nhiều dự án sử dụng Scala cho mục đích test GUI, vì vậy bài viết sẽ giới thiệu một sự">
+    <meta property="og:url" content="http://localhost:2368/autotest-scala/">
+    <meta property="article:published_time" content="2016-10-30T15:00:38.000Z">
+    <meta property="article:modified_time" content="2016-10-30T15:01:04.000Z">
+    <meta property="article:tag" content="test">
+    <meta property="article:tag" content="scala">
     
     <meta property="article:author" content="https://www.facebook.com/nguyenngoc101">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Welcome to Ghost">
-    <meta name="twitter:description" content="You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at &amp;lt;your blog URL&amp;gt;/ghost/. When you arrive, you can select this post from a list">
-    <meta name="twitter:url" content="http://localhost:2368/welcome-to-ghost/">
+    <meta name="twitter:title" content="Autotest GUI với Scala">
+    <meta name="twitter:description" content="Scala không phải là một ngôn ngữ mới nhưng vẫn còn khá lạ lẫm với các developer , đặc biệt là việc áp dụng Scala trong viết test. Ngày càng có nhiều dự án sử dụng Scala cho mục đích test GUI, vì vậy bài viết sẽ giới thiệu một sự">
+    <meta name="twitter:url" content="http://localhost:2368/autotest-scala/">
     <meta name="twitter:label1" content="Written by">
     <meta name="twitter:data1" content="ngocnv">
     <meta name="twitter:label2" content="Filed under">
-    <meta name="twitter:data2" content="Getting Started">
+    <meta name="twitter:data2" content="test, scala">
     
     <script type="application/ld+json">
 {
@@ -49,12 +51,12 @@
         ],
         "description": "I&#x27;m just a java lover"
     },
-    "headline": "Welcome to Ghost",
-    "url": "http://localhost:2368/welcome-to-ghost/",
-    "datePublished": "2016-10-30T13:15:14.000Z",
-    "dateModified": "2016-10-30T13:15:13.000Z",
-    "keywords": "Getting Started",
-    "description": "You&#x27;re live! Nice. We&#x27;ve put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at &amp;lt;your blog URL&amp;gt;/ghost/. When you arrive, you can select this post from a list",
+    "headline": "Autotest GUI với Scala",
+    "url": "http://localhost:2368/autotest-scala/",
+    "datePublished": "2016-10-30T15:00:38.000Z",
+    "dateModified": "2016-10-30T15:01:04.000Z",
+    "keywords": "test, scala",
+    "description": "Scala không phải là một ngôn ngữ mới nhưng vẫn còn khá lạ lẫm với các developer , đặc biệt là việc áp dụng Scala trong viết test. Ngày càng có nhiều dự án sử dụng Scala cho mục đích test GUI, vì vậy bài viết sẽ giới thiệu một sự",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://localhost:2368"
@@ -847,7 +849,7 @@
         <article class="post">
 
             <header class="post-header">
-                <h1 class="post-title">Welcome to Ghost</h1>
+                <h1 class="post-title">Autotest GUI với Scala</h1>
                 <section class="post-meta">
                     <p class="author">by <a href="../../author/ngocnv/">ngocnv</a></p>
                     <time class="post-date" datetime="2016-10-30">2016-10-30</time>
@@ -855,72 +857,58 @@
             </header>
             <section class="post-content">
 
-                <p>You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at <code>&lt;your blog URL&gt;/ghost/</code>. When you arrive, you can select this post from a list on the left and see a preview of it on the right. Click the little pencil icon at the top of the preview to edit this post and read the next section!</p>
+                <p>Scala không phải là một ngôn ngữ mới nhưng vẫn còn khá lạ lẫm với các developer , đặc biệt là việc áp dụng Scala trong viết test. Ngày càng có nhiều dự án sử dụng Scala cho mục đích test GUI, vì vậy bài viết sẽ giới thiệu một sự kết hợp hoàn hảo giữa <strong>Scala, Junit, Specs2 và Selenium</strong> để đạt được điều đó.</p>
 
-<h2 id="gettingstarted">Getting Started</h2>
+<p>Trong quá trình tham gia project tôi luôn tự hỏi vì sao họ lại kết hợp những thứ này với nhau. Với Junit và Selenium thì câu trả lời là tương đối dễ dàng bởi: </p>
 
-<p>Ghost uses something called Markdown for writing. Essentially, it's a shorthand way to manage your post formatting as you write!</p>
+<p><strong>Junit</strong>: là một framework unit test cho Java, hỗ trợ cấu hình và chạy các unit test, nó phổ biến đến nỗi khi nhắc đến viết unit test cho Java thì người ta sẽ nhắc ngay đến nó. Scala lại là ngôn ngữ  được biên dịch qua mã Java byte code rồi chạy trên JVM (Java virtual machine) nên 2 ngôn ngữ này có thể kết hợp với nhau hoặc có thể sử dụng các framework, thư viện của nhau. Do vậy việc tận dụng một framework phổ biến, đã được cộng đồng kiếm chứng làm giảm chi phí phát triển dự án</p>
 
-<p>Writing in Markdown is really easy. In the left hand panel of Ghost, you simply write as you normally would. Where appropriate, you can use <em>shortcuts</em> to <strong>style</strong> your content. For example, a list:</p>
+<p><strong>Selenium</strong>: để có thể thực hiện autotest GUI thì cần phải có một tool cho phép
+giả lập các thao tác của người dùng với browser như click chuột, nhập text, gõ các phím ... Selenium chính là một tool như vậy, bạn có thể làm những điều này dễ dàng với Selenium trên các trình duyệt khác nhau như firefox, chrome, ie... Cũng giống như Junit nó là một tool phổ biến và hỗ trợ đầy đủ nhất cho mục đích này.</p>
 
-<ul>
-<li>Item number one</li>
-<li>Item number two
-<ul><li>A nested item</li></ul></li>
-<li>A final item</li>
-</ul>
+<p><strong>Vậy tại sao lại sử dụng Scala mà không phải là Java?</strong> Khi viết test GUI ngoài việc đảm bảo viết và chạy các test đúng thì điều quan trọng nhất là các test case phải ngắn gọn dễ đọc, dễ bảo trì. Điều này thì Scala hơn hẳn Java, Scala cung cấp các built-in method, sử dụng closure và lamda giống như trong Ruby hay Python, làm cho code viết bằng Scala ngắn gọn, xúc tích và dễ đọc ngay cả với những tester ít có kinh nghiệm lập trình, do nó gần với ngôn ngữ tự nhiên hơn so với Java. Dưới đây là một số ví dụ:</p>
 
-<p>or with numbers!</p>
+<p>Nếu muốn khai báo một list các số nguyên, sau đó lọc những phần tử chẵn rồi sắp xếp:  </p>
 
-<ol>
-<li>Remember to buy some milk  </li>
-<li>Drink the milk  </li>
-<li>Tweet that I remembered to buy the milk, and drank it</li>
-</ol>
+<pre><code class="language-Scala">val nums = List(5, 1, 4, 3, 2)  
+nums.filter(_ % 2 == 0).sort(_ &lt; _)  
+</code></pre>
 
-<h3 id="links">Links</h3>
+<p>Hoặc một thao tác hay gặp khi viết các test là kiểm tra xem liệu một list có được sắp xếp theo chiều giảm dần hay không?</p>
 
-<p>Want to link to a source? No problem. If you paste in a URL, like <a href="http://ghost.org">http://ghost.org</a> - it'll automatically be linked up. But if you want to customise your anchor text, you can do that too! Here's a link to <a href="http://ghost.org">the Ghost website</a>. Neat.</p>
+<pre><code class="language-Scala">return list.view.zip(list.tail).forall(x =&gt; x._1 &lt;= x._2)  
+</code></pre>
 
-<h3 id="whataboutimages">What about Images?</h3>
+<p>Hay muốn convert một list các String sang list các số Double:  </p>
 
-<p>Images work too! Already know the URL of the image you want to include in your article? Simply paste it in like this to make it show up:</p>
-
-<p><amp-img src="https://ghost.org/images/ghost.png" alt="The Ghost Logo" width="800" height="400" layout="responsive"></amp-img></p>
-
-<p>Not sure which image you want to use yet? That's ok too. Leave yourself a descriptive placeholder and keep writing. Come back later and drag and drop the image in to upload:</p>
-
-<h3 id="quoting">Quoting</h3>
-
-<p>Sometimes a link isn't enough, you want to quote someone on what they've said. Perhaps you've started using a new blogging platform and feel the sudden urge to share their slogan? A quote might be just the way to do it!</p>
-
-<blockquote>
-  <p>Ghost - Just a blogging platform</p>
-</blockquote>
-
-<h3 id="workingwithcode">Working with Code</h3>
-
-<p>Got a streak of geek? We've got you covered there, too. You can write inline <code>&lt;code&gt;</code> blocks really easily with back ticks. Want to show off something more comprehensive? 4 spaces of indentation gets you there.</p>
-
-<pre><code>.awesome-thing {
-    display: block;
-    width: 100%;
+<pre><code class="language-Scala">def convertStringListToDoubleList(list: Seq[String]) = {  
+    list.map({e =&gt; e.toDouble})
 }
 </code></pre>
 
-<h3 id="readyforabreak">Ready for a Break?</h3>
+<p>Như vậy chỉ cần sử dụng Junit, Selenium và Scala là đã đủ đồ nghề cho chúng ta viết test. Tuy nhiên nếu chỉ có vậy thì các test case viết sẽ chỉ có code scala, nó có thể ngắn gọn và dễ đọc hơn với những người ít nhiều có kinh nghiệm với lập trình, tuy nhiên vấn đề đặt ra bây giờ là làm thế nào để test có thể dễ đọc, dễ hiểu với ngay cả những người không biết code. Tức là các test khi code xong phải gần giống như các test khi được đặc tả, nó phải gần giống như một file text. <a href="https://etorreborre.github.io/specs2/"><strong>Specs2</strong></a> là một thư viện cho phép đặc tả các unit test và acceptance test. Nó cũng cung cấp các <a href="https://etorreborre.github.io/specs2/guide/SPECS2-3.6.2/org.specs2.guide.Matchers.html">matcher</a> giúp việc assert các kết quả mong đợi và kết quả thực tế khi chạy thuận tiện và dễ đọc hơn. Hãy xem xét một test case được viết bằng Specs2 dưới đây:</p>
 
-<p>Throw 3 or more dashes down on any new line and you've got yourself a fancy new divider. Aw yeah.</p>
+<pre><code class="language-Scala">class HelloWorldSpec extends Specification { def is = s2"""
 
-<hr>
+  This is a specification for the 'Hello world' string
 
-<h3 id="advancedusage">Advanced Usage</h3>
+  The 'Hello world' string should
+    contain 11 characters                             $e1
+    start with 'Hello'                                $e2
+    end with 'world'                                  $e3
+                                                      """
+  def e1 = "Hello world" must haveSize(11)
+  def e2 = "Hello world" must startWith("Hello")
+  def e3 = "Hello world" must endWith("world")
 
-<p>There's one fantastic secret about Markdown. If you want, you can write plain old HTML and it'll still work! Very flexible.</p>
+}
+</code></pre>
 
-<p></p>
+<p>Khi chạy file này, method <em>def is=s2</em> sẽ được thực thi, trong method mỗi một dòng code sẽ có 1 dòng comment, các comment trong file trên sẽ là:  <em>contain 11 characters</em>, <em>start with 'Hello'</em> và <em>end with 'world'</em> chúng lần lượt là comment của các method được chạy lần lượt e1, e2 và e3. Lưu ý ký tự đặc biệt <em>$</em> trước các method nhằm giúp phân biệt giữa đâu là comment và đâu là nơi chạy các method. Với một test case được viết như trên những người làm về nghiệp vụ có thể đọc và hiểu được test case này đang làm gì, mà không cần quan tâm nhiều đến code viết bằng Scala. </p>
 
-<p>That should be enough to get you started. Have fun - and let us know what you think :)</p>
+<p>Trong thực tế các test case phức tạp hơn nhiều, bằng việc ném xử lý phần logic vào các method trong Scala, với cách đặt tên các method này hợp lý, có nghĩa(meaningful). Sau đó các method này sẽ được gọi kết hợp Specs2 sẽ khiến cho test case cực kỳ dễ đọc, dễ hiểu với bất cứ ai. Đó là một trong những điều quan trọng nhất khi viết test. Bởi với những project đòi hỏi thời gian maintain (lên tới 80% chi phí dự án) thì cũng kéo theo việc phải chỉnh sửa các test case liên tục. Specs2 giúp các tester và developer giảm đáng kể thời gian cho việc này</p>
+
+<p>Như vậy với việc sử dụng <strong>Scala, Junit, Specs2 và Selenium</strong> bạn sẽ có thêm một sự lựa chọn tốt cho các dự án cần viết autotest cho GUI. </p>
 
             </section>
 
