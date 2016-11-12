@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Learn Java</title><description>Thoughts, stories and ideas.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Sat, 12 Nov 2016 15:30:24 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Đọc file trong Java</title><description>&lt;ul&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Learn Java</title><description>Thoughts, stories and ideas.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Sat, 12 Nov 2016 15:38:36 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Đọc file trong Java</title><description>&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Đọc text file sử dụng BufferedReader để hạn chế số lần chương trình đọc từ disk&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-    try&lt;/code&gt;&lt;/pre&gt;</description><link>http://localhost:2368/doc-file-trong-java/</link><guid isPermaLink="false">bd4cf716-0e43-4e1d-b083-5bd1bfb27924</guid><dc:creator>ngocnv</dc:creator><pubDate>Sat, 12 Nov 2016 15:23:19 GMT</pubDate><content:encoded>&lt;ul&gt;
+    try&lt;/code&gt;&lt;/pre&gt;</description><link>http://localhost:2368/doc-file-trong-java/</link><guid isPermaLink="false">bd4cf716-0e43-4e1d-b083-5bd1bfb27924</guid><category>java</category><dc:creator>ngocnv</dc:creator><pubDate>Sat, 12 Nov 2016 15:23:19 GMT</pubDate><content:encoded>&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Đọc text file sử dụng BufferedReader để hạn chế số lần chương trình đọc từ disk&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
