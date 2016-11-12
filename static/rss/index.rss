@@ -1,4 +1,108 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Learn Java</title><description>Thoughts, stories and ideas.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Sun, 30 Oct 2016 15:01:43 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Autotest GUI với Scala</title><description>&lt;p&gt;Scala không phải là một ngôn ngữ mới nhưng vẫn còn khá lạ lẫm với các developer , đặc biệt là việc áp dụng Scala trong viết test. Ngày càng có nhiều dự án sử dụng Scala cho mục đích test GUI, vì vậy bài viết sẽ giới thiệu một sự&lt;/p&gt;</description><link>http://localhost:2368/autotest-scala/</link><guid isPermaLink="false">4f4c6791-7784-4b8c-9381-31118f6df2ba</guid><category>test</category><category>scala</category><dc:creator>ngocnv</dc:creator><pubDate>Sun, 30 Oct 2016 15:00:38 GMT</pubDate><content:encoded>&lt;p&gt;Scala không phải là một ngôn ngữ mới nhưng vẫn còn khá lạ lẫm với các developer , đặc biệt là việc áp dụng Scala trong viết test. Ngày càng có nhiều dự án sử dụng Scala cho mục đích test GUI, vì vậy bài viết sẽ giới thiệu một sự kết hợp hoàn hảo giữa &lt;strong&gt;Scala, Junit, Specs2 và Selenium&lt;/strong&gt; để đạt được điều đó.&lt;/p&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Learn Java</title><description>Thoughts, stories and ideas.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Sat, 12 Nov 2016 15:30:24 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Đọc file trong Java</title><description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Đọc text file sử dụng BufferedReader để hạn chế số lần chương trình đọc từ disk&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;import java.io.BufferedReader;  
+import java.io.File;  
+import java.io.FileInputStream;  
+import java.io.IOException;  
+import java.io.InputStreamReader;  
+import java.io.UnsupportedEncodingException;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+    try&lt;/code&gt;&lt;/pre&gt;</description><link>http://localhost:2368/doc-file-trong-java/</link><guid isPermaLink="false">bd4cf716-0e43-4e1d-b083-5bd1bfb27924</guid><dc:creator>ngocnv</dc:creator><pubDate>Sat, 12 Nov 2016 15:23:19 GMT</pubDate><content:encoded>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Đọc text file sử dụng BufferedReader để hạn chế số lần chương trình đọc từ disk&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;import java.io.BufferedReader;  
+import java.io.File;  
+import java.io.FileInputStream;  
+import java.io.IOException;  
+import java.io.InputStreamReader;  
+import java.io.UnsupportedEncodingException;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+    try {
+        File fileDir = new File("c:\\temp\\test.txt");
+
+        BufferedReader in = new BufferedReader(
+           new InputStreamReader(
+                      new FileInputStream(fileDir), "UTF8"));
+
+        String str;
+
+        while ((str = in.readLine()) != null) {
+            System.out.println(str);
+        }
+
+                in.close();
+        }
+        catch (UnsupportedEncodingException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        catch (IOException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Đọc dữ liệu từ file binary đẩy vào Array&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class="language-java"&gt;import java.io.BufferedInputStream;  
+import java.io.FileInputStream;  
+import java.io.InputStream;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+
+         InputStream inStream = null;
+         BufferedInputStream bis = null;
+
+         try {
+         // open input stream test.txt for reading purpose.
+         inStream = new FileInputStream("src/test.txt");
+
+         // input stream is converted to buffered input stream
+         bis = new BufferedInputStream(inStream);
+
+         // read number of bytes available
+         int numByte = bis.available();
+
+         // byte array declared
+         byte[] buf = new byte[numByte];
+
+         // read byte into buf , starts at offset 2, 3 bytes to read
+         bis.read(buf, 2, 5);
+
+         } catch(Exception e){
+            e.printStackTrace();
+         } finally{
+            // releases any system resources associated with the stream
+            if (inStream!=null)
+               inStream.close();
+            if (bis!=null)
+               bis.close();
+        }   
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</content:encoded></item><item><title>Autotest GUI với Scala</title><description>&lt;p&gt;Scala không phải là một ngôn ngữ mới nhưng vẫn còn khá lạ lẫm với các developer , đặc biệt là việc áp dụng Scala trong viết test. Ngày càng có nhiều dự án sử dụng Scala cho mục đích test GUI, vì vậy bài viết sẽ giới thiệu một sự&lt;/p&gt;</description><link>http://localhost:2368/autotest-scala/</link><guid isPermaLink="false">4f4c6791-7784-4b8c-9381-31118f6df2ba</guid><category>test</category><category>scala</category><dc:creator>ngocnv</dc:creator><pubDate>Sun, 30 Oct 2016 15:00:38 GMT</pubDate><content:encoded>&lt;p&gt;Scala không phải là một ngôn ngữ mới nhưng vẫn còn khá lạ lẫm với các developer , đặc biệt là việc áp dụng Scala trong viết test. Ngày càng có nhiều dự án sử dụng Scala cho mục đích test GUI, vì vậy bài viết sẽ giới thiệu một sự kết hợp hoàn hảo giữa &lt;strong&gt;Scala, Junit, Specs2 và Selenium&lt;/strong&gt; để đạt được điều đó.&lt;/p&gt;
 
 &lt;p&gt;Trong quá trình tham gia project tôi luôn tự hỏi vì sao họ lại kết hợp những thứ này với nhau. Với Junit và Selenium thì câu trả lời là tương đối dễ dàng bởi: &lt;/p&gt;
 
